@@ -1,0 +1,36 @@
+plugins {
+  id 'java'
+  id 'io.quarkus' version "${quarkusVersion}"
+}
+
+group 'com.example'
+version '1.0.0'
+
+dependencies {
+  // Quarkus
+  implementation platform("io.quarkus.platform:quarkus-bom:${quarkusVersion}")
+  implementation 'io.quarkus:quarkus-arc'
+  implementation 'io.quarkus:quarkus-config-yaml'
+  implementation 'io.quarkus:quarkus-smallrye-health'
+  implementation 'io.quarkus:quarkus-smallrye-openapi'
+  implementation 'io.quarkus:quarkus-resteasy-jackson'
+  implementation 'io.quarkus:quarkus-rest-client-jackson'
+  // Override the Smallrye Open API version to 2.1.22
+  implementation('io.smallrye:smallrye-open-api-core') {
+    version { strictly '2.1.22' }
+  }
+}
+
+java {
+  sourceCompatibility = JavaVersion.VERSION_17
+  targetCompatibility = JavaVersion.VERSION_17
+}
+
+compileJava {
+  options.encoding = 'UTF-8'
+  options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+  options.encoding = 'UTF-8'
+}

@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+
+# IntelliJ
+.idea
+lib/
+
+# OSX
+.DS_Store
+
+# Eclipse
+.project
+.settings/org.eclipse.buildship.core.prefs
+
+# Config files
+.env

@@ -1,0 +1,14 @@
+quarkus:
+  http:
+    port: 10000
+  package:
+    type: uber-jar
+  smallrye-openapi:
+    info-title: 'Quarkus 24412'
+    info-description: 'Reproducer for Quarkus issue #24412'
+  banner:
+    enabled: false
+  rest-client:
+    foo:
+      url: http://foo.example.com
+      scope: javax.inject.Singleton
